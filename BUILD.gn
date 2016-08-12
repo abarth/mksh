@@ -1,0 +1,108 @@
+config("mksh_warnings") {
+  cflags = [
+    "-Wno-constant-conversion"
+  ]
+}
+
+executable("mksh") {
+  sources = [
+    "edit.c",
+    "emacsfn.h",
+    "eval.c",
+    "exec.c",
+    "expr.c",
+    "exprtok.h",
+    "funcs.c",
+    "histrap.c",
+    "jobs.c",
+    "lalloc.c",
+    "lex.c",
+    "main.c",
+    "mirhash.h",
+    "misc.c",
+    "sh.h",
+    "shf.c",
+    "strlcpy.c",
+    "syn.c",
+    "tree.c",
+    "var.c",
+    "var_spec.h",
+  ]
+
+  cflags = [
+    "-std=c89"
+  ]
+
+  defines = [
+    "MKSH_BUILDSH",
+    "MKSH_BUILD_R=529",
+    "HAVE_STRING_POOLING=1",
+
+    "MKSH_ASSUME_UTF8",
+    "MKSH_DISABLE_DEPRECATED",
+    "HAVE_ATTRIBUTE_BOUNDED=1",
+    "HAVE_ATTRIBUTE_FORMAT=1",
+    "HAVE_ATTRIBUTE_NORETURN=1",
+    "HAVE_ATTRIBUTE_PURE=1",
+    "HAVE_ATTRIBUTE_UNUSED=1",
+    "HAVE_ATTRIBUTE_USED=1",
+    "HAVE_SYS_TIME_H=1",
+    "HAVE_TIME_H=1",
+    "HAVE_BOTH_TIME_H=1",
+    "HAVE_SYS_BSDTYPES_H=0",
+    "HAVE_SYS_FILE_H=1",
+    "HAVE_SYS_MKDEV_H=0",
+    "HAVE_SYS_MMAN_H=1",
+    "HAVE_SYS_PARAM_H=1",
+    "HAVE_SYS_RESOURCE_H=1",
+    "HAVE_SYS_SELECT_H=1",
+    "HAVE_SYS_SYSMACROS_H=0",
+    "HAVE_BSTRING_H=0",
+    "HAVE_GRP_H=1",
+    "HAVE_IO_H=0",
+    "HAVE_LIBGEN_H=1",
+    "HAVE_LIBUTIL_H=0",
+    "HAVE_PATHS_H=1",
+    "HAVE_STDINT_H=1",
+    "HAVE_STRINGS_H=1",
+    "HAVE_TERMIOS_H=1",
+    "HAVE_ULIMIT_H=0",
+    "HAVE_VALUES_H=0",
+    "HAVE_CAN_INTTYPES=1",
+    "HAVE_CAN_UCBINTS=1",
+    "HAVE_CAN_INT8TYPE=1",
+    "HAVE_CAN_UCBINT8=1",
+    "HAVE_RLIM_T=1",
+    "HAVE_SIG_T=1",
+    "HAVE_SYS_ERRLIST=0",
+    "HAVE_SYS_SIGNAME=0",
+    "HAVE_SYS_SIGLIST=0",
+    "HAVE_FLOCK=1",
+    "HAVE_LOCK_FCNTL=1",
+    "HAVE_GETRUSAGE=1",
+    "HAVE_GETSID=1",
+    "HAVE_GETTIMEOFDAY=1",
+    "HAVE_KILLPG=1",
+    "HAVE_MEMMOVE=1",
+    "HAVE_MKNOD=0",
+    "HAVE_MMAP=1",
+    "HAVE_NICE=1",
+    "HAVE_REVOKE=0",
+    "HAVE_SETLOCALE_CTYPE=0",
+    "HAVE_LANGINFO_CODESET=0",
+    "HAVE_SELECT=1",
+    "HAVE_SETRESUGID=0",
+    "HAVE_SETGROUPS=0",
+    "HAVE_STRERROR=0",
+    "HAVE_STRSIGNAL=0",
+    "HAVE_STRLCPY=1",
+    "HAVE_FLOCK_DECL=1",
+    "HAVE_REVOKE_DECL=1",
+    "HAVE_SYS_ERRLIST_DECL=1",
+    "HAVE_SYS_SIGLIST_DECL=1",
+    "HAVE_PERSISTENT_HISTORY=1",
+    "MKSH_BUILD_R=529",
+  ]
+
+  configs += [ ":mksh_warnings" ]
+}
