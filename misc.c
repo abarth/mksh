@@ -2027,8 +2027,8 @@ chvt(const Getopt *go)
 	if (setsid() == -1)
 		errorf(Tf_sD_s_s, "chvt", "setsid", "failed");
 	if (go->optarg[0] != '-') {
-		if (ioctl(fd, TIOCSCTTY, NULL) == -1)
-			errorf(Tf_sD_s_s, "chvt", "TIOCSCTTY", "failed");
+		// if (ioctl(fd, TIOCSCTTY, NULL) == -1)
+		// 	errorf(Tf_sD_s_s, "chvt", "TIOCSCTTY", "failed");
 		if (tcflush(fd, TCIOFLUSH))
 			errorf(Tf_sD_s_s, "chvt", "TCIOFLUSH", "failed");
 	}

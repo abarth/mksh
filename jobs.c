@@ -230,6 +230,7 @@ proc_errorlevel(Proc *p)
 void
 j_suspend(void)
 {
+	return;
 	struct sigaction sa, osa;
 
 	/* Restore tty and pgrp. */

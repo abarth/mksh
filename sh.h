@@ -471,9 +471,9 @@ extern int __cdecl setegid(gid_t);
 #define mksh_tcget(fd,st) tcgetattr((fd), (st))
 #define mksh_tcset(fd,st) tcsetattr((fd), TCSADRAIN, (st))
 #else
-#define mksh_ttyst	struct termio
-#define mksh_tcget(fd,st) ioctl((fd), TCGETA, (st))
-#define mksh_tcset(fd,st) ioctl((fd), TCSETAW, (st))
+// #define mksh_ttyst	struct termio
+// #define mksh_tcget(fd,st) ioctl((fd), TCGETA, (st))
+// #define mksh_tcset(fd,st) ioctl((fd), TCSETAW, (st))
 #endif
 
 #ifndef ISTRIP

@@ -1435,6 +1435,7 @@ restore_pipe(int restore_dfl)
 int
 setsig(Trap *p, sig_t f, int flags)
 {
+	return 1;
 	struct sigaction sigact;
 
 	if (p->signal == ksh_SIGEXIT || p->signal == ksh_SIGERR)
